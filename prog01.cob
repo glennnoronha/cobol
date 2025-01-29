@@ -11,5 +11,5 @@
        PROCEDURE DIVISION.
       * can put a statement in here (goes in area b)
            DISPLAY "Hello COBOL".
+      * stop run is not part of the procedure division     
            STOP RUN.
-           
