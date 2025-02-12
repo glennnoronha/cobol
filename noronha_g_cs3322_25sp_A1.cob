@@ -20,13 +20,14 @@
            05 W-UP PIC A(11) VALUE "Unit Price".
            05 W-AMOUNT PIC A(12) VALUE "Amount".
            
-           05 W-NUM-01 PIC 9(2) VALUE 01.
-           05 W-NUM-02 PIC 9(2) VALUE 02.
-           05 W-NUM-03 PIC 9(2) VALUE 03.
+           05 W-NUM-01 PIC 9(4) VALUE 01.
+           05 W-NUM-02 PIC 9(4) VALUE 02.
+           05 W-NUM-03 PIC 9(4) VALUE 03.
+           05 W-NUM-F PIC BB99.
            
            05 W-DESC-01 PIC X(36) VALUE "Chair".
-           05 W-DESC-02 PIC X(33) VALUE "Copier paper".
-           05 W-DESC-03 PIC X(33) VALUE "USB drives 16 GB".
+           05 W-DESC-02 PIC X(36) VALUE "Copier paper".
+           05 W-DESC-03 PIC X(36) VALUE "USB drives 16 GB".
 
 
            05 W-QUANT-VAL-01 PIC 9(9) VALUE 11.
@@ -34,9 +35,9 @@
            05 W-QUANT-VAL-03 PIC 9(9) VALUE 103.
            05 W-QUANT-VAL-F PIC ZZZZZZZZZ.
 
-           01 W-UP-VAL-01 PIC 9(8)V99 VALUE 25.0.
-           01 W-UP-VAL-02 PIC 9(8)V99 VALUE 5.24.
-           01 W-UP-VAL-03 PIC 9(8)V99 VALUE 7.39.
+           01 W-UP-VAL-01 PIC 9(7)V99 VALUE 25.0.
+           01 W-UP-VAL-02 PIC 9(7)V99 VALUE 5.24.
+           01 W-UP-VAL-03 PIC 9(7)V99 VALUE 7.39.
            01 W-UP-VAL-F PIC ZZZZ,ZZZ.99.
 
            01 W-AMT-VAL-01 PIC $9(7)V99 VALUE 275.0.
@@ -69,19 +70,22 @@
            MOVE W-QUANT-VAL-01 TO W-QUANT-VAL-F
            MOVE W-UP-VAL-01 TO W-UP-VAL-F
            MOVE W-AMT-VAL-01 TO W-AMT-VAL-F
-           DISPLAY W-NUM-01 SPACE SPACE W-DESC-01 W-QUANT-VAL-F 
+           MOVE W-NUM-01 TO W-NUM-F.
+           DISPLAY W-NUM-F W-DESC-01 W-QUANT-VAL-F 
            W-UP-VAL-F W-AMT-VAL-F.
 
            MOVE W-QUANT-VAL-02 TO W-QUANT-VAL-F
            MOVE W-UP-VAL-02 TO W-UP-VAL-F
            MOVE W-AMT-VAL-02 TO W-AMT-VAL-F
-           DISPLAY W-NUM-02 SPACE SPACE W-DESC-02 W-QUANT-VAL-F 
+           MOVE W-NUM-02 TO W-NUM-F.
+           DISPLAY W-NUM-F W-DESC-02 W-QUANT-VAL-F 
            W-UP-VAL-F W-AMT-VAL-F.
 
            MOVE W-QUANT-VAL-03 TO W-QUANT-VAL-F
            MOVE W-UP-VAL-03 TO W-UP-VAL-F
            MOVE W-AMT-VAL-03 TO W-AMT-VAL-F
-           DISPLAY W-NUM-03 SPACE SPACE W-DESC-03 W-QUANT-VAL-F 
+           MOVE W-NUM-03 TO W-NUM-F.
+           DISPLAY W-NUM-F W-DESC-03 W-QUANT-VAL-F 
            W-UP-VAL-F W-AMT-VAL-F.
            DISPLAY W-SPACES-72.
            DISPLAY W-SPACES-72.
