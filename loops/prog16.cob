@@ -1,0 +1,19 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PROG16.
+       
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 WS-TEMP-F PIC 9(3)V9(12).
+       01 WS-TEMP-C PIC 9(3)V9(12).
+       01 WS-TEMP-C-E PIC ZZZZ.9999.
+
+       PROCEDURE DIVISION.
+           PERFORM VARYING WS-TEMP-F FROM 30 BY 10 UNTIL WS-TEMP-F = 90
+              PERFORM 100-F-TO-C
+           END-PERFORM.
+           STOP RUN.
+
+       100-F-TO-C.
+           COMPUTE WS-TEMP-C = (WS-TEMP-F - 32) * (5 / 9)
+           MOVE WS-TEMP-C TO WS-TEMP-C-E
+           DISPLAY WS-TEMP-C-E.
